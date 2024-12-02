@@ -1,3 +1,7 @@
+.hide {
+    display: none;
+}
+
 h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
@@ -28,24 +32,28 @@ img {
 .container {
     max-width: 1158px;
     margin: 0 auto;
-    padding: 0 15px 0;
-}
-
-.section {
-    padding: 120px 0 120px;
-}
-
-.header {
-    border-bottom: 1px solid #E7E9FC;
-    background: #FFF;
-    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .header-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 24px 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.section {
+    padding: 120px 0 120px;
+    min-width: 320px;
+    max-width: 1158px;
+}
+
+.header {
+    border-bottom: 1px solid #E7E9FC;
+    background: #FFF;
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .nav {
@@ -103,6 +111,20 @@ img {
     letter-spacing: 0.03em;
 }
 
+@media screen and (min-width: 320px) {
+    .nav-ul {
+        display: none;
+    }
+
+    .burger-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        border: 0;
+        background: inherit;
+    }
+}
+
 .nav-link:hover, .nav-link:active, .address-link:hover, .address-link:active {
     color: #404BBF;
 }
@@ -124,6 +146,12 @@ img {
 }
 
 /* Address */
+
+@media screen and (min-width: 320px) {
+    .address {
+        display: none;
+    }
+}
 
 .address-ul {
     display: flex;
@@ -560,6 +588,7 @@ img {
 /* Modal */
 
 .backdrop {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -771,4 +800,8 @@ img {
     background-color: #404bbf;
     fill: #F4F4FD;
     border: none;
+}
+
+.is-open {
+    display: block;
 }
