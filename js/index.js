@@ -1,15 +1,32 @@
 const buttons = document.getElementsByTagName('button');
+const contacts = document.getElementsByClassName('contacts-link');
 
+const closeModal = (button) => {
+    const modal = button.closest('[data-modal]');
+    if (modal === null) {
+        return;
+    }
+    modal.classList.remove('is-open');
+}
+
+Array.from(contacts).forEach((link) => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        closeModal(event.target);
+
+        const backdrop = document.getElementsByClassName('backdrop');
+        Array.from(backdrop).forEach((modal) => {
+            modal.classList.remove('is-open');
+            modal.classList.add('is-open');
+        });
+    })
+})
 Array.from(buttons).forEach((button) => {
     const className = button.className;
     switch (className) {
         case 'modal-close-button':
             button.addEventListener('click', () => {
-                const modal = button.closest('[data-modal]');
-                if (modal === null) {
-                    return;
-                }
-                modal.classList.remove('is-open');
+                closeModal(button);
             });
             break;
         case 'burger-button':
@@ -19,7 +36,6 @@ Array.from(buttons).forEach((button) => {
                     mobileMenuItem.classList.remove('is-open');
                     mobileMenuItem.classList.add('is-open');
                 });
-                toggleModal(button, false);
             });
             break;
     }
