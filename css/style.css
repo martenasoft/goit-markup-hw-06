@@ -203,6 +203,12 @@ img {
     background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.7)), url(./../images/people-office.jpg);
 }
 
+@media only screen and (min-device-pixel-ratio: 2) {
+    .section-hero {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.7)), url(./../images/people-office@2x.jpg);
+    }
+}
+
 .hero-title {
     display: block;
     margin: 0 auto;
