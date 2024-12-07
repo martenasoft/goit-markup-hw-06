@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebStudio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,13 +38,63 @@
                 <use href="./images/icons.svg#icon-burger-menu"></use>
             </svg>
         </button>
-    </div>
 
+        <div class="mobile-menu" data-modal>
+            <button type="button" class="modal-close-button">
+                <svg class="modal-icon-close" width="8" height="8">
+                    <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+            </button>
+
+            <ul class="modal-menu-list">
+                <li class="modal-menu-item"><a href="./index.html" class="modal-menu-link">Studio</a></li>
+                <li class="modal-menu-item"><a href="" class="modal-menu-link">Portfolio</a></li>
+                <li class="modal-menu-item"><a href="" class="modal-menu-link">Contacts</a></li>
+            </ul>
+
+            <ul class="modal-address-list">
+                <li class="modal-address-item"><a href="tel:+110001111111" class="modal-address-item">+11 (000) 111-11-11</a></li>
+                <li class="modal-address-item"><a href="mailto:info@devstudio.com" class="modal-address-item">info@devstudio.com</a></li>
+            </ul>
+
+            <ul class="social-list">
+                <li class="social-list-item">
+                    <a href="https://instagram.com/" class="social-list-link">
+                        <svg class="social-list-icon" width="16" height="16">
+                            <use href="./images/icons.svg#icon-instagram"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="social-list-item">
+                    <a href="https://x.com/" class="social-list-link">
+                        <svg class="social-list-icon" width="16" height="16">
+                            <use href="./images/icons.svg#icon-twitter"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="social-list-item">
+                    <a href="http://facebook.com/" class="social-list-link">
+                        <svg class="social-list-icon" width="16" height="16">
+                            <use href="./images/icons.svg#icon-facebook"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="social-list-item">
+                    <a href="https://linkedin.com/" class="social-list-link">
+                        <svg class="social-list-icon" width="16" height="16">
+                            <use href="./images/icons.svg#icon-linkedin"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
 </header>
 
-<main class="main ">
+<main class="main">
     <!-- Section 1 Hero -->
-    <section class="section section-hero hide">
+    <section class="section section-hero ">
         <div class="container">
             <h1 class="hero-title">
                 Effective Solutions for Your Business
@@ -53,7 +104,7 @@
     </section>
 
     <!-- Section 2 Features -->
-    <section class="section section-feature hide">
+    <section class="section section-feature">
         <div class="container">
             <h2 class="visually-hidden">Features</h2>
             <ul class="features-ui">
@@ -111,7 +162,7 @@
     </section>
 
     <!-- Section 3 Team -->
-    <section class="section section-team hide">
+    <section class="section section-team">
         <div class="container">
             <h2 class="team-title">Our Team</h2>
             <ul class="ul-team">
@@ -271,7 +322,7 @@
     </section>
 
     <!-- Section 4 Portfolio -->
-    <section class="section section-portfolio hide">
+    <section class="section section-portfolio">
         <div class="container">
             <h2 class="portfolio-title">Portfolio</h2>
             <ul class="portfolio-ui">
@@ -359,7 +410,7 @@
     </section>
 </main>
 <!-- Footer -->
-<footer class="footer hide">
+<footer class="footer">
     <div class="container footer-container">
         <div class="footer-logo">
             <a href="./index.html" class="footer-logo-link">Web<span class="footer-logo-link-span">Studio</span></a>
@@ -420,7 +471,7 @@
     </div>
 </footer>
 
-<div class="backdrop is-ope" data-modal>
+<div class="backdrop is-open" data-modal>
     <div class="modal">
         <button type="button" class="modal-close-button">
             <svg class="modal-icon-close" width="8" height="8">
@@ -481,10 +532,12 @@
                 </label>
 
             </div>
-            <button type="submit" class="modal-submit">Submit</button>
+            <div class="button-wrapper">
+                <button type="submit" class="modal-submit">Submit</button>
+            </div>
         </form>
     </div>
 </div>
-
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
