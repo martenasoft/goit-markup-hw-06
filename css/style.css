@@ -135,7 +135,7 @@ img {
     height: 100%;
     position: fixed;
     background: #FFFFFF;
-    padding: 32px 16px 40px;
+    padding: 72px 16px 40px;
     transform: translateX(100%);
     transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
@@ -143,7 +143,6 @@ img {
 }
 
 .modal-menu-list {
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -155,12 +154,12 @@ img {
 }
 
 
-.modal-address-list {
-    padding-bottom: 10px;
+.modal-address-item {
+    margin-bottom: 24px;
 }
 
-.modal-address-item {
-    margin-top: 24px;
+.modal-address-item:last-child {
+    margin-bottom: 0;
 }
 
 .modal-menu-link {
@@ -495,7 +494,6 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: left;
-    align-items: baseline;
 }
 
 .footer-logo {
@@ -523,17 +521,15 @@ img {
 }
 
 .footer-logo-paragraph {
-
     color: #F4F4FD;
-    font-weight: 500;
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    text-align: left;
-}
-
-.footer-social {
-    margin-top: 72px;
-    width: 100%;
+    margin-bottom: 72px;
 }
 
 .footer-social .social-list {
@@ -573,16 +569,17 @@ img {
 }
 
 .footer-subscribe {
+    width: 100%;
     margin-top: 72px;
-    max-width: 300px;
 }
+
 
 .input-subscribe-email {
     border-radius: 4px;
     border: 1px solid #FFF;
     padding: 8px 16px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    width: 264px;
+    width: 288px;
     height: 40px;
     background-color: transparent;
 
@@ -859,6 +856,11 @@ img {
 
 @media only screen and (min-width: 760px) {
 
+    .container {
+        max-width: 768px;
+    }
+
+
     /* Top logo */
     .logo-top {
         margin-right: 120px;
@@ -926,8 +928,8 @@ img {
     }
 
     .section-feature {
-        padding-top: 96px;
-        padding-bottom: 24px;
+        padding: 96px 16px;
+
     }
 
     .hero-title {
@@ -940,6 +942,20 @@ img {
     }
 
     /* Section 2 Features */
+
+    .features-ui {
+        gap: 72px;
+        column-gap: 24px;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .feature-item {
+        margin-bottom: 0;
+        max-width: 736px;
+        width: calc((100% - 24px) / 2);
+    }
+
     .feature-subtitle {
         color: #2E2F42;
         font-family: "Roboto", sans-serif;
@@ -952,17 +968,27 @@ img {
         text-align: left;
     }
 
-    .features-ui {
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-
-    .feature-item {
-        max-width: 356px;
-
+   .feature-paragraph {
+        max-width: 288px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #434455;
+        text-align: left;
+        width: 100%;
+        margin: 0;
     }
 
     /* Section 3 Team  */
+
+
+    .ul-team {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 64px 24px;
+    }
+
     .team-item, .team-item:last-child {
         margin-bottom: 64px;
     }
@@ -976,21 +1002,50 @@ img {
         gap: 12px;
     }
 
+    .portfolio-ui {
+        gap: 72px 24px;
+    }
+
+    .portfolio-item {
+        margin: 0;
+        padding: 0;
+        width: calc((100% - 24px* 2) / 2);
+    }
+
+    .overlay-wrapper {
+        max-width: 356px;
+    }
+
     /* Footer */
+
+    .footer {
+        background-color: #2E2F42;
+        color: white;
+        padding: 96px 0 96px;
+    }
+
     .footer-container {
         flex-direction: row;
+        align-items: baseline;
+        gap: 112px 24px;
+        text-align: left;
         flex-wrap: wrap;
-        justify-content: center;
-        align-items: flex-start;
+        padding: 0 108px;
     }
 
-    .footer-social {
-        width: auto;
+    .footer-social .social-list {
+        justify-content: left;
+
     }
+
 
     .footer-logo {
+        max-width: 264px;
         text-align: left;
-        max-width: 220px;
+    }
+
+    .footer-logo-paragraph {
+        margin-bottom: 0;
     }
 
     .footer-paragraph {
@@ -1000,16 +1055,18 @@ img {
     .form-subscribe {
         flex-direction: row;
     }
-
+    .input-subscribe-email {
+        width: 264px;
+    }
     .footer-subscribe {
         max-width: none;
+        margin-top: 0;
     }
 }
 
 @media only screen and (min-width: 1158px) {
     .container {
-        padding-left: 24px;
-        padding-right: 24px;
+        padding: 0 15px;
         min-width: 1158px;
     }
 
@@ -1031,7 +1088,7 @@ img {
 
     /* Section 1 Hero */
     .section {
-        padding: 120px 0 120px;
+        padding: 120px 0;
     }
 
     .section-hero {
@@ -1064,9 +1121,18 @@ img {
         font-size: 20px;
         font-style: normal;
         font-weight: 500;
-        line-height: 1.4;
+        line-height: 1.2;
         letter-spacing: 0.02em;
         margin-bottom: 8px;
+    }
+
+    .feature-paragraph {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
     }
 
     .feature-item {
@@ -1093,6 +1159,8 @@ img {
 
     }
 
+
+
     .ul-team {
         flex-wrap: nowrap;
         gap: 24px;
@@ -1105,7 +1173,16 @@ img {
         max-width: 360px;
     }
 
+    .portfolio-ui {
+        row-gap: 48px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+    }
+
     .portfolio-item {
+        width: calc((100% - 2* 24px) / 3);
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
         margin: 0;
     }
 
@@ -1142,23 +1219,28 @@ img {
     }
 
     .footer-logo {
-        margin-right: 120px;
+        margin-right: 0;
     }
 
     .footer-container {
-        display: flex;
-        justify-content: left;
-        align-items: baseline;
+       gap: 120px 80px;
     }
 
     .form-subscribe {
+
         display: flex;
         gap: 24px;
     }
 
-    .footer-social {
-        margin-right: 80px;
+    .footer-subscribe {
+        width: auto;
     }
+
+    .footer-social {
+        margin-right: 0;
+    }
+
+
 
     .footer-social .social-list {
         display: flex;
