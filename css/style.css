@@ -14,6 +14,8 @@ ul {
 
 img {
     display: block;
+    width: 100%;
+    height: auto;
 }
 
 .visually-hidden {
@@ -41,8 +43,8 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 17px;
+    padding-bottom: 17px;
 }
 
 .section {
@@ -197,7 +199,6 @@ img {
     background-position: center;
     margin: 0 auto;
     display: block;
-    width: 100%;
     min-width: 320px;
     background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.7)), url(./../images/people-office.jpg);
 }
